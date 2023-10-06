@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inputs_Player : MonoBehaviour
 {
 
+
    public Vector3 Input_Movement()
    {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -15,6 +16,12 @@ public class Inputs_Player : MonoBehaviour
         return movement_player_input;
    }
 
-   
+
+   public bool Input_Running()
+   {
+      return Input.GetButton("Running");
+   }
     
+
+   
 }

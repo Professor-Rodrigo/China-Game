@@ -361,6 +361,7 @@
 "Assets/Game/Scripts/Player/Inputs_Player.cs"
 "Assets/Game/Scripts/Player/Movement_Player.cs"
 "Assets/Game/Scripts/Player/Player_Controller.cs"
+"Assets/Game/Scripts/Player/Stealth_Player.cs"
 -langversion:9.0
 
 /deterministic

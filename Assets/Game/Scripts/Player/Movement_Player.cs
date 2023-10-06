@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Movement_Player : MonoBehaviour
 {
-    
-     public float movementSpeed = 6.0f; // Velocidade de movimento do jogador
-    public float rotationSpeed = 3.0f; // Velocidade de rotação do jogador
 
-     public float gravity = 9.8f; // Gravidade
-      private Vector3 velocity; // Vetor de velocidade do jogador
-
+    private Vector3 velocity; // Vetor de velocidade do jogador
 
     private CharacterController cC;
     private Transform cam;
 
 
-    [Header("Movement Settings")]
-    [SerializeField] private float speed = 6f;
-    
+    [Header("Rotation Settings")]
+    [SerializeField] float rotationSpeed = 3.0f; // Velocidade de rotação do jogador
 
-        [Header("Gravity Settings")]
-        public float yVelocity;
-       
+    [Header("Movement Settings")]
+    [SerializeField] float movementSpeed = 6.0f;  
+
+
+    [Header("Gravity Settings")]
+    float yVelocity;
+    [SerializeField] float gravity = 9.8f; 
 
 
     void Start()
@@ -35,7 +33,7 @@ public class Movement_Player : MonoBehaviour
     public void Move_Player(Vector3 _received_input)
     {
         Vector3 moveDirection = cam.forward * _received_input.z + cam.right * _received_input.x;
-       moveDirection.y = 0f;
+        moveDirection.y = 0f;
 
         if (moveDirection != Vector3.zero)
         {
@@ -46,44 +44,35 @@ public class Movement_Player : MonoBehaviour
         // Aplicar gravidade
         if (cC.isGrounded)
         {
-            velocity.y = -0.5f; // Reseta a velocidade vertical quando o jogador está no chão
+            velocity.y = -0.5f;
         }
         else
         {
-            velocity.y -= gravity * Time.deltaTime; // Aplica a gravidade
+            velocity.y -= gravity * Time.deltaTime; 
         }
 
         // Mover o jogador usando o Character Controller
         cC.Move(moveDirection.normalized * movementSpeed * Time.deltaTime + velocity * Time.deltaTime);
 
-
-        if(Input.GetKey("space"))
-        {
-            movementSpeed = 6f;
-            
-        }
-        else
-        {
-            movementSpeed = 3f;
-
-        }
     }
     
 
     public float Movement_Speed()
     {
+        float my_speed = cC.velocity.magnitude;
 
-        if (cC.isGrounded)
-        {
-            float my_speed = cC.velocity.magnitude;
-
-        
-            return my_speed;
-        }
-
-        return 0f;
-       
+        return my_speed;
     }
 
 
+    public void Set_Speed(bool _is_running , bool crounched)
+    {
+        if (_is_running && !crounched)
+        {
+            movementSpeed = 6.0f;
+            return;
+        }
+
+        movementSpeed = 3.0f;
+    }
 }
