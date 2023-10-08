@@ -26,6 +26,8 @@ public class Player_Controller : MonoBehaviour
 
     void Update()
     {
+        transform.position = new Vector3(movement_Player.transform.position.x, 0f, movement_Player.transform.position.z);
+
         // Movement  
         movement_Player.Move_Player(inputs_Player.Input_Movement());
 
