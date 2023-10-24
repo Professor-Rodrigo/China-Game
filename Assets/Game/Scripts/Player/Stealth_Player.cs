@@ -8,6 +8,12 @@ public class Stealth_Player : MonoBehaviour
     bool is_stealth_mode_active;
     CharacterController cC;
 
+   public Transform neck;
+
+   public float sentado;
+
+   public float emPE;
+
 
     void Start()
     {
@@ -21,6 +27,7 @@ public class Stealth_Player : MonoBehaviour
       if (Input.GetButtonDown("Fire1") && !is_stealth_mode_active)
       {
          StartCoroutine(Delay_Stealth_Mode(true, 0.7f));
+         neck.position = new Vector3(neck.position.x,sentado ,neck.position.z);
          return is_stealth_mode_active;
       }
 
@@ -28,6 +35,8 @@ public class Stealth_Player : MonoBehaviour
       if (Input.GetButtonDown("Fire1") && is_stealth_mode_active)
       {
          StartCoroutine(Delay_Stealth_Mode(false, 0.5f));
+         neck.position = new Vector3(neck.position.x, emPE ,neck.position.z);
+
          return is_stealth_mode_active;
       }
      
