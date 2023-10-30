@@ -40,23 +40,20 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Game\Scripts\solução\visao.cs" />
-     <Compile Include="Assets\Game\Scripts\prototype\Enemys_Vision.cs" />
-     <Compile Include="Assets\Game\Scripts\solução\olhar.cs" />
-     <Compile Include="Assets\Game\Scripts\prototype\Enemys_Radar.cs" />
-     <Compile Include="Assets\Game\Scripts\Enemy_AI.cs" />
+     <Compile Include="Assets\Game\Scripts\Detections_Bar.cs" />
+     <Compile Include="Assets\Game\Scripts\Enemy\Enemy_Radar.cs" />
      <Compile Include="Assets\Game\Scripts\Player\Animator_Player.cs" />
      <Compile Include="Assets\Game\Scripts\Player\Raycast_Player.cs" />
-     <Compile Include="Assets\Game\Scripts\Patrol_Behaviour.cs" />
+     <Compile Include="Assets\Game\Scripts\Enemy\Enemys_Look.cs" />
      <Compile Include="Assets\Game\Scripts\Player\Player_Controller.cs" />
-     <Compile Include="Assets\Game\Scripts\prototype\Enemys_Look.cs" />
+     <Compile Include="Assets\Game\Scripts\Enemy\Patrol_Points.cs" />
+     <Compile Include="Assets\Game\Scripts\Enemy\Patrol_Behaviour.cs" />
+     <Compile Include="Assets\Game\Scripts\Enemy\Enemy_Vision.cs" />
      <Compile Include="Assets\Game\Scripts\Player\Stealth_Player.cs" />
-     <Compile Include="Assets\Game\Scripts\prototype\Enemy_Hologram.cs" />
-     <Compile Include="Assets\Game\Scripts\Patrol_Points.cs" />
-     <Compile Include="Assets\Game\Scripts\Player\neck.cs" />
+     <Compile Include="Assets\Game\Scripts\Enemy\Enemy_Controller.cs" />
+     <Compile Include="Assets\Game\Scripts\Enemy\Enemy_Hologram.cs" />
      <Compile Include="Assets\Game\Scripts\Player\Inputs_Player.cs" />
      <Compile Include="Assets\Game\Scripts\Player\Movement_Player.cs" />
-     <Compile Include="Assets\Game\Scripts\prototype\Enemy_Controller.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
